@@ -7,9 +7,9 @@ const { Sequelize } = require('sequelize');
 const Conexao = new Sequelize({
     dialect: 'postgres',
     host: 'localhost',
-    port: 5432,
+    port: 5433,
     username: 'postgres',
-    password: 1234,
+    password: "1234",
     database: 'biblioteca_digital'
 })
 
