@@ -1,0 +1,26 @@
+✅ O que foi corrigido:
+Erro nas rotas PUT e DELETE
+
+Você escreveu //:id (duas barras), mas o correto é /:id.
+
+Isso impedia que as rotas funcionassem corretamente.
+
+Confirmamos que sua rota /autores está sendo definida corretamente
+
+Usamos caminhos relativos ('/', /:id) dentro do AutoresRoute.
+
+Isso funciona com app.use('/autores', AutoresRoute) no server.js.
+
+Garantimos que você importe e use a rota no seu servidor
+
+Sem isso, o servidor nem saberia que a rota /autores existe.
+
+📌 Resultado final:
+Agora você tem rotas funcionais para:
+
+Método	Rota	Função
+GET	/autores	Listar todos os autores
+GET	/autores/:id	Buscar um autor específico
+POST	/autores	Criar novo autor
+PUT	/autores/:id	Atualizar um autor
+DELETE	/autores/:id	Deletar um autor
