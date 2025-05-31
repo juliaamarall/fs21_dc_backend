@@ -1,0 +1,128 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1748701158355
+  modified: 1748701158355
+collection:
+  - name: USUARIOS
+    meta:
+      id: fld_3f2d140654404b439c8bf7cd8e08d8df
+      created: 1748701175267
+      modified: 1748701175267
+      sortKey: -1748701175267
+    children:
+      - url: http://localhost:3000/usuarios
+        name: CONSULTAR
+        meta:
+          id: req_a5e772164c7d4363a4d8eacf1ebf9b39
+          created: 1748701176996
+          modified: 1748701729541
+          isPrivate: false
+          sortKey: -1748701176996
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/10.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/usuarios
+        name: CRIAR
+        meta:
+          id: req_ce34c9b8d63749a49d02b4dc779d8615
+          created: 1748701734210
+          modified: 1748702704428
+          isPrivate: false
+          sortKey: -1748701734210
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            	{
+            		"nome": "marcio",
+            		"email": "marcio@admin.com.br",
+            		"senha": "123123",
+            		"ativo": true
+            	}
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/usuarios/3
+        name: ATUALIZAR
+        meta:
+          id: req_d6e0809943f14f788ceee3340f1b3303
+          created: 1748702131424
+          modified: 1748703347652
+          isPrivate: false
+          sortKey: -1748702131424
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            	{
+            		"nome": "julia amaral",
+            		"email": "juliamaral@admin.com.br",
+            		"senha": "123123"
+            	}
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/usuarios/1
+        name: DELETAR
+        meta:
+          id: req_fb9b23a1f3d7450e92e03f90b17f1391
+          created: 1748702627279
+          modified: 1748703353204
+          isPrivate: false
+          sortKey: -1748702627279
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1748701166832
+    modified: 1748701166832
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1748701166765
+    modified: 1748701166765
+    isPrivate: false
