@@ -20,7 +20,7 @@ const LivrosController = {
             const dados = request.body;
             await LivrosModel.create(dados);
             return response.json({ 
-                message: 'Usuário criado com sucesso!',
+                message: 'Livro cadastrado com sucesso!',
                 data: dados
             })
 
@@ -42,7 +42,7 @@ const LivrosController = {
             }
         });
         return response.json({
-            message: "Usuário atualizado com sucesso!"
+            message: "Livro atualizado com sucesso!"
         })
 
     },
@@ -57,7 +57,7 @@ const LivrosController = {
         })
         // DELETE FROM usuarios WHERE id = ;DELETE FROM usuarios;;
         return response.json({
-            message: "Usuário deletado com sucesso!"
+            message: "Livro deletado com sucesso!"
         })
 
 }

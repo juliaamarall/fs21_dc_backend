@@ -20,7 +20,7 @@ const EditorasController = {
             const dados = request.body;
             await EditorasModel.create(dados);
             return response.json({ 
-                message: 'Usuário criado com sucesso!',
+                message: 'Editora cadastrada com sucesso!',
                 data: dados
             })
 
@@ -42,7 +42,7 @@ const EditorasController = {
             }
         });
         return response.json({
-            message: "Usuário atualizado com sucesso!"
+            message: "Editora atualizada com sucesso!"
         })
 
     },
@@ -57,7 +57,7 @@ const EditorasController = {
         })
         // DELETE FROM usuarios WHERE id = ;DELETE FROM usuarios;;
         return response.json({
-            message: "Usuário deletado com sucesso!"
+            message: "Editora deletada com sucesso!"
         })
 
 }

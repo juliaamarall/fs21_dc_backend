@@ -17,6 +17,14 @@ const LivrosModel = Conexao.define(
             type: DataTypes.STRING,
             allowNull: false,
             unique: true
+        }, 
+
+        autor_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references:{
+                key: id,
+            }
         }
     }, 
     {

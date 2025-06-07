@@ -20,7 +20,7 @@ const AutoresController = {
             const dados = request.body;
             await AutoresModel.create(dados);
             return response.json({ 
-                message: 'Usuário criado com sucesso!',
+                message: ' Autor criado com sucesso!',
                 data: dados
             })
 
@@ -42,7 +42,7 @@ const AutoresController = {
             }
         });
         return response.json({
-            message: "Usuário atualizado com sucesso!"
+            message: "Autor atualizado com sucesso!"
         })
 
     },
@@ -57,7 +57,7 @@ const AutoresController = {
         })
         // DELETE FROM usuarios WHERE id = ;DELETE FROM usuarios;;
         return response.json({
-            message: "Usuário deletado com sucesso!"
+            message: "Autor deletado com sucesso!"
         })
 
 }
