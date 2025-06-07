@@ -1,4 +1,5 @@
-const UsuarioModel = require("../model/UsuarioModel.js")
+const UsuarioModel = require("../model/UsuarioModel.js");
+const UsuariosServices = require("../services/UsuariosServices.js");
 const UsuarioController = {
     
         listar: async (request, response) => {
@@ -15,13 +16,22 @@ const UsuarioController = {
     } ,
 
         criarDados: async (request, response) => {
-            const dados = request.body;
-            await UsuarioModel.create(dados);
-            return response.json({ 
-                message: 'Usuário criado com sucesso!',
-                data: dados
-            })
 
+            try{
+                const dados = request.body;
+                await UsuariosServices.validandoUsuarios(dados)
+                await UsuarioModel.create(dados);
+                return response.json({ 
+                    message: 'Usuário criado com sucesso!',
+                    data: dados
+                })
+    
+            } catch(e){
+                return response.status(500).json({
+                    message: 'NÃO FOI POSSIVEL CADASTRAR USUARIO ' + e
+                })
+            }
+    
         },
 
         

@@ -1,15 +1,15 @@
-const AutoresModel = require("../model/AutoresModel.js")
-const AutoresController = {
+const EditorasModel = require("../model/EditorasModel.js")
+const EditorasController = {
     
     listar: async (request, response) => {
-        const dados = await AutoresModel.findAll();
+        const dados = await EditorasModel.findAll();
         return response.json(dados);
     
 },
 
     listarId: async (request, response) => {
         const id = request.params.id;
-        const dados = await AutoresModel.findByPk(id);
+        const dados = await EditorasModel.findByPk(id);
         return response.json(dados);
     
 } ,
@@ -18,7 +18,7 @@ const AutoresController = {
 
         try{
             const dados = request.body;
-            await AutoresModel.create(dados);
+            await EditorasModel.create(dados);
             return response.json({ 
                 message: 'Usuário criado com sucesso!',
                 data: dados
@@ -36,7 +36,7 @@ const AutoresController = {
     atualizarDados: async (request, response) => {
         const dados = request.body;
         const id = request.params.id;
-        await AutoresModel.update(dados, {
+        await EditorasModel.update(dados, {
             where: {
                 id: id
             }
@@ -50,7 +50,7 @@ const AutoresController = {
 
     deletarDados: async (request, response) => {
         const id = request.params.id;
-        await AutoresModel.destroy({
+        await EditorasModel.destroy({
             where: {
                 id: id
             }
@@ -64,4 +64,4 @@ const AutoresController = {
 
 }
 
-module.exports = AutoresController;
+module.exports = EditorasController;

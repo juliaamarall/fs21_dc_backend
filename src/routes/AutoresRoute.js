@@ -1,47 +1,17 @@
 const express = require('express');
-const AutoresModel = require('../model/AutoresModel.js');
+const UsuarioModel = require('../model/UsuarioModel.js');
+const AutoresController = require('../controller/AutoresController.js');
 
 const AutoresRoute = express.Router();
+    // usando o controller para fazer o metodo get
+AutoresRoute.get('/autores', AutoresController.listar)
 
-AutoresRoute.get('/', async (request, response) => {
-    const dados = await AutoresModel.findAll();
-    return response.json(dados);
-});
+AutoresRoute.get('/autores/:id', AutoresController.listarId)
 
-AutoresRoute.get('/:id', async (request, response) => {
-    const id = request.params.id;
-    const dados = await AutoresModel.findByPk(id);
-    return response.json(dados);
-});
+AutoresRoute.post('/autores', AutoresController.criarDados)
 
-AutoresRoute.post('/', async (request, response) => {
-    const dados = request.body;
-    await AutoresModel.create(dados);
-    return response.json({ 
-        message: 'Usuário criado com sucesso!',
-        data: dados
-    });
-});
+AutoresRoute.put('/autores/:id', AutoresController.atualizarDados)
 
-AutoresRoute.put('/:id', async (request, response) => {
-    const dados = request.body;
-    const id = request.params.id;
-    await AutoresModel.update(dados, {
-        where: { id }
-    });
-    return response.json({
-        message: "Usuário atualizado com sucesso!"
-    });
-});
-
-AutoresRoute.delete('/:id', async (request, response) => {
-    const id = request.params.id;
-    await AutoresModel.destroy({
-        where: { id }
-    });
-    return response.json({
-        message: "Usuário deletado com sucesso!"
-    });
-});
+AutoresRoute.delete('/autores/:id', AutoresController.deletarDados );
 
 module.exports = AutoresRoute;
